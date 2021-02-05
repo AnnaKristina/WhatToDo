@@ -1,0 +1,1 @@
+To start: npm i mongoose express ejs
