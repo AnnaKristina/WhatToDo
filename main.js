@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-Parser");
 const router = require("./routes/toDoRoute")
+require("dotenv").config();
+
 
 const app = express();
 
@@ -17,7 +19,7 @@ const options = {
     useUnifiedTopology: true
     }
     
-    mongoose.connect("mongodb+srv://AnnaKristina:4DbrhL8R@cluster0.awfia.mongodb.net/WhatToDo2?retryWrites=true&w=majority", 
+    mongoose.connect(process.env.DATABASE_URL, 
     options, 
     (err)=>{
      
