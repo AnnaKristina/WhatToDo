@@ -1,0 +1,19 @@
+body{
+    background-color: rgba(248, 237, 138, 0.356);
+    color: cornflowerblue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+input {
+    border-radius: 5px;
+    border: hidden;
+    }
+button {
+     background-color: rgb(228, 59, 59);
+     color: white;
+     border-radius: 5px;
+     border: none;
+}
+a {
+    text-decoration: none;
+    color: rgb(31, 18, 37);
+}
