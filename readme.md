@@ -1,1 +1,2 @@
-To start: npm i mongoose express ejs
+Install: npm i mongoose express ejs
+To start: npm start
