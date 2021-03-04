@@ -4,22 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What To Do</title>
-    <link rel="stylesheet" href="style/main.css">
+    <title>WhatToDo</title>
+    <link rel="stylesheet" href="../public/style/welcome.css">
 </head>
 <body>
-    <h1>Organize your life</h1>
     
-    <%- include("addData.ejs")%>
-   
-        <% for(let i = 0; i < data.length; i++) { %>
-
-            <div> <%=data[i].name %>
-                <a href="/edit/<%= data[i]._id %>">edit</a>
-                <a href="/delete/<%= data[i]._id %>">delete</a>
-
-            </div>
-
-    <% } %>
 </body>
 </html>
+
+<div>
+    <h1>Welcome to a better organized life</h1>
+</div>

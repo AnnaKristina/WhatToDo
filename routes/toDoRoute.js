@@ -3,15 +3,18 @@ const Todo = require("../model/toDo");
 const router = express.Router();
 
 router.get("/", async (req, res)=>{
+  res.render("index.ejs")
+})
+router.get("/home", async (req, res)=>{
     const data = await Todo.find()      
-     res.render("index.ejs", {data:data}) 
+     res.render("toDo.ejs", {data:data}) 
   })
  
- router.post("/", async (req, res) =>{
+ router.post("/home", async (req, res) =>{
    await new Todo ({
      name: req.body.name
    }).save();
-   res.redirect("/")
+   res.redirect("/home")
  })
  
  router.get("/edit/:id", async (req, res) => {
