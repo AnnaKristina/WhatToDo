@@ -1,24 +1,30 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser = require("body-Parser");
-const router = require("./routes/toDoRoute")
+const cookieParser = require("cookie-parser");
+const indexRouter = require("./routes/indexRoute")
 const userRouter = require("./routes/userRoute");
+const homeRouter = require("./routes/homeRoute");
 require("dotenv").config();
 
 
 const app = express();
 
-app.use(express.static(__dirname + "/public"))
-app.use(bodyParser.urlencoded({ extended: false }))
-app.set("view engine", "ejs")
-app.use("/", router)
+app.use(express.static(__dirname + "/public"));
+app.set("view engine", "ejs");
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
+
+app.use(cookieParser());
+app.use(indexRouter);
 app.use(userRouter);
+app.use(homeRouter);
 
 
 
 const options = {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true
     }
     
     mongoose.connect(process.env.DATABASE_URL, 
