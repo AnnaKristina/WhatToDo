@@ -11,7 +11,7 @@ router.post("/edit", verifyToken, homeEditData)
 router.get("/delete/:id",verifyToken, homeDeleteData)
 
 router.get("/logOut", (req, res)=> {
-    res.clearCookie("jwtToken").redirect("/login")
+    res.clearCookie("jwtToken").redirect("/")
 } )
 
 
